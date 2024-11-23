@@ -24,9 +24,22 @@ noBtn.addEventListener("mouseover", () => {
   const maxX = wrapperRect.width - noBtnRect.width;
   const maxY = wrapperRect.height - noBtnRect.height;
 
-  const randomX = Math.floor(Math.random() * maxX);
-  const randomY = Math.floor(Math.random() * maxY);
+  // Generate random positions
+  let randomX, randomY;
 
+  // Ensure the new position is different enough from the current one
+  do {
+    randomX = Math.floor(Math.random() * maxX);
+    randomY = Math.floor(Math.random() * maxY);
+  } while (
+    Math.abs(randomX - noBtn.offsetLeft) < 30 && // Prevent minor movement
+    Math.abs(randomY - noBtn.offsetTop) < 30
+  );
+
+  // Apply new position
+  noBtn.style.position = "absolute";
   noBtn.style.left = randomX + "px";
   noBtn.style.top = randomY + "px";
 });
+
+
