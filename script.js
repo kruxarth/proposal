@@ -4,10 +4,15 @@ const question = document.querySelector(".question");
 const gif = document.querySelector(".gif");
 
 // Change text and gif when the Yes button is clicked
+// Preload the GIF
+const preloadedGif = new Image();
+preloadedGif.src = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGVhbGxjZnQ1MmZoeWFnejZmemg0ZzVzajl0YjJrbmE5dDA4N2xjdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qFmdpUKAFZ6rMobzzu/giphy.gif";
+
 yesBtn.addEventListener("click", () => {
   question.innerHTML = "I LOVE YOU TOO";
-  gif.src = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGVhbGxjZnQ1MmZoeWFnejZmemg0ZzVzajl0YjJrbmE5dDA4N2xjdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qFmdpUKAFZ6rMobzzu/giphy.gif";
+  gif.src = preloadedGif.src; // Use the preloaded GIF
 });
+
 
 // Make the No button move randomly on hover
 noBtn.addEventListener("mouseover", () => {
