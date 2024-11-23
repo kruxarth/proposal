@@ -59,3 +59,8 @@ button.no-btn {
     left: 50%;
     transform: translateX(-50%);
 }
+
+#noBtn {
+  transition: left 0.3s ease, top 0.3s ease;
+}
+
